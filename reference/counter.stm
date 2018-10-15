@@ -1,0 +1,36 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="index.css">
+<title>counter test</title>
+</head>
+
+
+<body bgcolor="white">
+
+<blockquote>
+<div align="right"><h2>ssi counter test</h2>
+  <hr>
+
+<P align="center"><BIG><BIG><BIG>
+<!--#exec cgi="/cgi-bin/counter.pl" -->
+
+
+<!-- Google Analytics Tracking Code -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34898365-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- End Google Analytics Tracking Code -->
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+#smenu { z-Index:999; visibility:hidden; position:absolute; top:100px; left:-225px; width:400px;}
+#smenu1 { z-Index:999; filter:alpha(opacity=25);}
+#sright {width:150px; float:right; vertical-align:top}
+#sleft {width:250px; float:left;}
+#sright a:link{text-decoration:none; color:#999999; font-weight:bold; font-family:arial, helvetica, sans-serif;}
+#sright a:visited{text-decoration:none; color:#999999; font-weight:bold; font-family:arial, helvetica, sans-serif;}
+#sright a:active{text-decoration:none; color:#999999; font-weight:bold; font-family:arial, helvetica, sans-serif;}
+#sright a:hover{text-decoration:none; color:#999999; font-weight:bold; font-family:arial, helvetica, sans-serif;}

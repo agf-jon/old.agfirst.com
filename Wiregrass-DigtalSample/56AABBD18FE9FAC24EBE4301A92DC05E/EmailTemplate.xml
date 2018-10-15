@@ -1,0 +1,86 @@
+<templates>
+	<emailsubject>
+		<![CDATA[$subject]]>
+	</emailsubject>
+	<emailbody>
+		<![CDATA[ 
+		<html>
+			<title>IHDP Email Message</title>
+			<body>
+				<span>Hi $receivername|$receiveremail,</span><br />
+				<br />
+				<span>$sendername|$senderemail wrote these comments for you:</span><br />
+				<br />
+				<span>$message</span><br/><br/>
+				<span>$sendername|$senderemail would like for you to view the following digital edition.</span><br />
+				<br />
+				<span>Please click on the page below to be directed to the digital edition:</span>
+				<br/>
+				<br/>
+				<span>$thumbnail$pagenum $link$pagenum</span>
+				<br/>
+			
+<!-- Google Analytics Tracking Code -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34898365-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- End Google Analytics Tracking Code -->
+
+</body>
+		</html>
+		]]>
+	</emailbody>
+	<emailsubjectcrop>
+		<![CDATA[$subject]]>
+	</emailsubjectcrop>
+	<emailbodycrop>
+		<![CDATA[ 
+		<html>
+			<title>IHDP Email Message</title>
+			<body>
+				<span>Hi $receivername|$receiveremail,</span><br /><br />
+				<span>$sendername|$senderemail wrote these comments for you:</span><br /><br />
+				<span>$message</span>
+				<br/>
+				<br/>
+				<span>$sendername|$senderemail would like for you to view the following digital edition.</span><br /><br />
+				<span>Please click on the link below to be directed to the digital edition:</span><br/><br/>
+				<span>$crop</span>
+				<br/>
+				<span>$link$pagenum</span>
+			
+<!-- Google Analytics Tracking Code -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34898365-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- End Google Analytics Tracking Code -->
+
+</body>
+		</html>
+		]]>
+	</emailbodycrop>
+</templates>

@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GetLanguageResult>
+<locale>
+  <!-- Tooltips-->
+  <item name="ttCrop"><![CDATA[ Ernte]]></item>
+  <item name="ttPrint"><![CDATA[ Drucken]]></item>
+  <item name="ttShare"><![CDATA[ Empfehlen]]></item>
+  <item name="ttSettings"><![CDATA[ Einstellungen]]></item>
+  <item name="ttBackCover"><![CDATA[ Cover-Rückseite]]></item>
+  <item name="ttBookmarks"><![CDATA[ Lesezeichen]]></item>
+  <item name="ttNotes"><![CDATA[ Notizen]]></item>
+  <item name="ttRSSFeeds"><![CDATA[ RSS]]></item>
+  <item name="ttSinglePage"><![CDATA[ Wechseln Sie zu einzelnen Seite Modus]]></item>
+  <item name="ttDoublePage"><![CDATA[ Wechseln Sie zu doppelseitigen Modus]]></item>
+  <item name="ttFirstPage"><![CDATA[ Buchdeckel]]></item>
+  <item name="ttPreviousPage"><![CDATA[ Vorherige Seite]]></item>
+  <item name="ttNextPage"><![CDATA[ Nächste Seite]]></item>
+  <item name="ttLastPage"><![CDATA[ Letzte Seite]]></item>
+  <item name="ttCurrentPage"><![CDATA[ Sie sind auf Seite $ seite von $ total]]></item>
+  <item name="ttFullScreen"><![CDATA[ Vollbild]]></item>
+  <item name="ttNormalScreen"><![CDATA[ normalen Bildschirmgröße]]></item>
+  <item name="ttSearch"><![CDATA[Suche]]></item>
+  <item name="ttAdvanceSearch"><![CDATA[ Erweiterte Suche]]></item>
+  <item name="ttDownloadPDF"><![CDATA[ PDF-Datei herunterladen]]></item>
+  <item name="ttTranslate"><![CDATA[ Übersetzen]]></item>
+  <item name="ttSearchCurrent"><![CDATA[ Suche in der aktuellen Ausgabe]]></item>
+  <item name="ttSearchArchive"><![CDATA[ Suche im Archiv]]></item>
+  <item name="ttHelp"><![CDATA[Hilfe]]></item>
+  <item name="ttPlay"><![CDATA[ Hilfe]]></item>
+  <item name="ttPause"><![CDATA[ Pause]]></item>
+  <item name="ttSlideShowSpeed"><![CDATA[ Diashow Geschwindigkeit]]></item>
+  <item name="ttSlow"><![CDATA[ langsam]]></item>
+  <item name="ttMedium"><![CDATA[ Mittel]]></item>
+  <item name="ttFast"><![CDATA[ schnell]]></item>
+  <item name="ttTableOfContent"><![CDATA[ Inhaltsverzeichnis]]></item>
+  <item name="ttDeleteNote"><![CDATA[ Notiz löschen]]></item>
+  <item name="ttDeleteBookmark"><![CDATA[ Lesezeichen löschen]]></item>
+
+  <!--Tabs -->
+  <item name="tbMenu"><![CDATA[Menü]]></item>
+  <item name="tbArchive"><![CDATA[ Archiv]]></item>
+  <item name="tbSearch"><![CDATA[ Suche]]></item>
+  <item name="tbTOC"><![CDATA[ Inhalt]]></item>
+  <item name="tbThumbnails"><![CDATA[ Daumennagel]]></item>
+  <item name="tbLinks"><![CDATA[ Werbetreibende]]></item>
+  <item name="tbMedia"><![CDATA[ Multimedia]]></item>
+  <item name="tbPanelSearchTerm"><![CDATA[ Ihre Suche hier:]]></item>
+
+
+  <!--Headers -->
+  <item name="hPage"><![CDATA[ Seite]]></item>
+  <item name="hArticle"><![CDATA[ Artikel]]></item>
+  <item name="hdescription"><![CDATA[ Beschreibung :]]></item>
+
+  <!--Dialogs-->
+
+  <!-- Download PDF-->
+  <item name="dlgDownloadPDFHeader"><![CDATA[ PDF-Datei herunterladen]]></item>
+  <item name="dlgDownloadSubheader"><![CDATA[ Konfigurieren Sie PDF-Download]]></item>
+  <item name="dlgSavePage"><![CDATA[ Seite speichern]]></item>
+  <item name="dlgSaveAll"><![CDATA[ Alle speichern als PDF]]></item>
+  <item name="dlgSavePageFrom"><![CDATA[ Seite speichern Von]]></item>
+  <item name="dlgSavePageTo"><![CDATA[ Um]]></item>
+  <item name="dlgFileName"><![CDATA[ Dateiname :]]></item>
+  <item name="dlgFileSize"><![CDATA[ Dateigröße :]]></item>
+  <item name="dlgSystemRequirement"><![CDATA[ Systemvoraussetzung :]]></item>
+
+  <!-- Settings-->
+  <item name="dlgSettingsHeader"><![CDATA[ Einstellungen:]]></item>
+  <item name="dlgSettingsSubheader"><![CDATA[ Konfigurieren der Einstellungen]]></item>
+  <item name="dlgShowPageShadow"><![CDATA[Seite Schatten]]></item>
+  <item name="dlgShowHotspots"><![CDATA[ zeigen Hotspots]]></item>
+  <item name="dlgShowTooltips"><![CDATA[ Zeigen Link Tooltips]]></item>
+  <item name="dlgLanguage"><![CDATA[ Sprache :]]></item>
+  <item name="dlgSlideShowDuration"><![CDATA[ Diashow Dauer :]]></item>
+  <item name="dlgSeconds"><![CDATA[ Sekunden]]></item>
+  <item name="dlgSettingsTheme"><![CDATA[ Thema]]></item>
+  <item name="dlgPlayFlippingSound"><![CDATA[ Spielen Spiegeln Sound]]></item>
+  <item name="dlgPlaySlideShowEvery"><![CDATA[ Diashow abspielen jeder]]></item>
+  
+  <!-- Translate -->
+  <item name="dlgTranslateHeader"><![CDATA[ übersetzen]]></item>
+  <item name="dlgLeftPage"><![CDATA[ Linke Seite]]></item>
+  <item name="dlgRightPage"><![CDATA[ Rechte Seite]]></item>
+  <item name="dlgSelectLanguage"><![CDATA[ Wählen Sie Sprache:]]></item>
+
+  <!-- Print-->
+  <item name="dlgPrintHeader"><![CDATA[ Drucken :]]></item>
+  <item name="dlgPrintSubheader"><![CDATA[ konfigurieren drucken]]></item>
+  <item name="dlgPrint"><![CDATA[ Drucken]]></item>
+  <item name="dlgPrintCurrentPage"><![CDATA[ Aktuelle Seite drucken]]></item>
+  <item name="dlgPrintFrom"><![CDATA[ Drucken aus]]></item>
+  <item name="dlgPrintTo"><![CDATA[ Um]]></item>
+  
+  <item name="dlgPrintLeft"><![CDATA[ Drucken linken Seite]]></item>
+  <item name="dlgPrintRight"><![CDATA[ Drucken der rechten Seite]]></item>
+  <!-- Bookmarks-->
+  <item name="dlgBookmarkHeader"><![CDATA[ Lesezeichen:]]></item>
+  <item name="dlgBookmarkSubheader"><![CDATA[ Konfigurieren Lesezeichen]]></item>
+  <item name="dlgBookmarkDescription"><![CDATA[ Geben Sie eine Beschreibung für das Lesezeichen]]></item>
+  <item name="dlgMangeBookmark"><![CDATA[ Lesezeichen verwalten]]></item>
+  <item name="dlgMangeLeftPageRadio"><![CDATA[ Lesezeichen setzen bei linken Seite]]></item>
+  <item name="dlgMangeRightPageRadio"><![CDATA[ Lesezeichen setzen bei rechten Seite]]></item>
+  <item name="dlgBookmarkTextColor"><![CDATA[ Lesezeichen Textfarbe :]]></item>
+  <item name="dlgBookmarkColor"><![CDATA[Lesezeichen Farbe:]]></item>
+  <item name="dlgBookmarkTextHeader"><![CDATA[Seite]]></item>
+  <item name="dlgBookmarkAdded"><![CDATA[Ein Lesezeichen ist schon auf dieser Seite hinzugefügt!]]></item>
+
+  
+  <!-- Email -->
+  <item name="dlgEmailHeader"><![CDATA[ E-Mail]]></item>
+  <item name="dlgEmailSubHeader"><![CDATA[ Konfigurieren Sie E-Mail]]></item>
+  <item name="dlgEmailLinkType"><![CDATA[ Wählen Sie einen Link :]]></item>
+  <item name="dlgEmailCurrentPage"><![CDATA[ Aktuelle Seite]]></item>
+  <item name="dlgEmailThisIssue"><![CDATA[ Diese Ausgabe]]></item>
+  <item name="dlgEmailFromName"><![CDATA[ Ihr Benennung]]></item>
+  <item name="dlgEmailToName"><![CDATA[ Empfänger Benennung]]></item>
+  <item name="dlgEmailLeft"><![CDATA[ Linke]]></item>
+  <item name="dlgEmailRight"><![CDATA[ Rechte]]></item>		
+  <item name="dlgEmailSendCC"><![CDATA[ CC Mir]]></item>
+
+  <item name="dlgEmailFrom"><![CDATA[ Von]]></item>
+  <item name="dlgEmailTo"><![CDATA[ Um]]></item>
+  <item name="dlgEmailMultiple"><![CDATA[ Mehrere E-Mail-ID durch Komma getrennt]]></item>
+  <item name="dlgEmailSubject"><![CDATA[ Betrifft]]></item>
+  <item name="dlgEmailMessage"><![CDATA[ Nachricht]]></item>
+
+  <!-- Notes-->
+  <item name="dlgNotesHeader"><![CDATA[ Notizen :]]></item>
+  <item name="dlgNotesSubheader"><![CDATA[ Konfigurieren Sie Notizen]]></item>
+  <item name="dlgMangeNotes"><![CDATA[ Verwalten von Notizen]]></item>
+
+  <!-- Email Clip Dialog -->
+  <item name="dlgImageClipHeader"><![CDATA[  E-Mail- Ausschnitt:]]></item>
+  <item name="dlgImageClipSubheader"><![CDATA[  Teilen diese Clip:]]></item>
+
+  <!-- Crop-->
+  <item name="dlgCropHeader"><![CDATA[ Ernte Vorschau:]]></item>
+  <item name="dlgCropSubheader"><![CDATA[Verwendung Ernte Bild]]></item>
+  <item name="dlgCropHelp"><![CDATA[Ernte helfen]]></item>
+  
+    <!-- FullScreen -->
+  <item name="dlgFullScreenTitle"><![CDATA[ Vollbild]]></item>
+  <item name="dlgFullScreenHeader"><![CDATA[ Bitte beachten Sie, dass die folgenden<br/> Funktionen sind nicht verfügbar im Vollbildmodus :<br/><br/><p>]]></item>
+  <item name="dlgFullScreenSearch"><![CDATA[<li>Suche</li>]]></item>
+  <item name="dlgFullScreenSend"><![CDATA[<li>Senden</li>]]></item>
+  <item name="dlgFullScreenBookmark"><![CDATA[<li>Lesezeichen hinzufügen</li>]]></item>
+  <item name="dlgFullScreenNote"><![CDATA[<li>Hinzufügen einer Notiz</li>]]></item>
+  <item name="dlgFullScreenTypingPageNumber"><![CDATA[<li>Eingeben einer Seitenzahl</li>]]></item>
+  <item name="dlgFullScreenConfirm"><![CDATA[</p>Wollen Sie im Vollbild-Modus öffnen?]]></item>
+
+  <!-- Help-->
+  <item name="dlgHelpHeader"><![CDATA[ Hilfe :]]></item>
+  <item name="dlgHelpSubheader"><![CDATA[ Epaper Flip helfen]]></item>
+
+  <item name="dlgHelpNavigationArrows"><![CDATA[ Navigationspfeile - auf dem internen Pfeile klicken, um die Seiten umblättern. Klicken Sie auf die Pfeile externen nehmen Sie direkt auf die vordere Abdeckung (erste Seite) oder auf der Rückseite (letzte Seite).]]></item>
+  <item name="dlgHelpJumpToPage"><![CDATA[ Gehe zu Seite - für jede Seite springen, indem Sie die Seitenzahl direkt in das Feld dann drücken Sie "Geben Sie" (oder "Zurück") auf Ihrer Tastatur.]]></item>
+  <item name="dlgHelpFullScreen"><![CDATA[ Vollbild - klicken für Vollbild-Modus, drücken Sie ESC, um den Vollbildmodus zu verlassen]]></item>
+  <item name="dlgHelpDownloadPDF"><![CDATA[ PDF-Datei herunterladen - Klicken Sie auf die Online-Ausgabe als PDF-Dokument herunterladen.]]></item>
+  <item name="dlgHelpCrop"><![CDATA[ Ernte - Klicken Sie auf bestimmten Bereich zu beschneiden und als E-Mail senden wählen]]></item>
+  <item name="dlgHelpPrint"><![CDATA[ Drucken - Klicken Sie auf beliebige Seiten oder das gesamte Auflage gedruckt.]]></item>
+  <item name="dlgHelpShare"><![CDATA[ Aktie - teilen Sie Ihre Ausgabe / content überall (Facebook, Twitter, etc.).]]></item>
+  <item name="dlgHelpTOC"><![CDATA[ TOC - Klicken Sie auf die Tabelle der Content-Seite in Ihrer Ausgabe Blick.]]></item>
+  <item name="dlgHelpSettings"><![CDATA[ Einstellung - können Sie die Einstellung für Ihre persönliche Ansicht zu ändern. Wählen Sie Ihren gewünschten Seite betrachten, Ton-Option, Schatten-Effekt, automatische hotspot glanznummer , etc.]]></item>
+  <item name="dlgHelpPrint"><![CDATA[Drucken - Klicken Sie auf beliebige Seiten oder das gesamte Auflage gedruckt.]]></item>
+  <item name="dlgHelpBookmark"><![CDATA[ Lesezeichen -> Hier können Sie die Lesezeichen, um Ihre digitalen Ausgabe hinzufügen.]]></item>
+  <item name="dlgHelpNote"><![CDATA[ Notizen -> können Sie Notizen hinzufügen überall auf der Seite. Wenn Sie alle Ihre Notizen anzeigen möchten, einfach auf das Notiz-Symbol klicken Sie erneut.]]></item>
+  <item name="dlgHelpPageMode"><![CDATA[ Seite Modus - Klick für Einzel-und Doppelzimmer-Seite Modus wechseln.]]></item>
+  <item name="dlgHelpMenu"><![CDATA[ Menü -> unter dem Menü stehen Ihnen verschiedene Schaltflächen: interaktive Tabelle der Inhalte, Thumbnails um eine kleinere Version der alle Seiten gleichzeitig anzeigen. Mit einem Klick auf ein Daumennagel öffnet die ausgewählte Seite. Multimedia-Taste, um Videos und Audio in Ihrer Ausgabe wenn jeder Ansicht.]]></item>
+  <item name="dlgHelpSearch"><![CDATA[ Search-Geben Sie Ihre Phrase oder ein Wort in das Suchfeld ein und klicken Sie auf "gehen". Sie können Ihre Suche durch Hinzufügen eines Sterns (*) nach einem Wort zu verbessern, wird unsere Suchmaschine hochziehen Ergebnisse mit allen Variationen des Wortes. Beispiel: Suche * Unsere Suchmaschine hochziehen Seiten mit den Wörtern sucht, die Suche, durchsuchbare, etc . Durch den Austausch einen Brief mit einem Wort mit einem Fragezeichen (?), wird unsere Suchmaschine hochziehen Seiten, die jedes Zeichen in dieser Position enthalten. Beispiel: b? g, wird unsere Suchmaschine hochziehen Seiten mit den Wörtern groß, betteln, Beutel, etc. finden Sie auf der Suchergebnisseite Miniaturansicht gelangen Sie direkt zu dieser Seite in der Ausgabe und die Suche auf der Seite hervorgehoben werden.]]></item>
+
+  <!--Buttons -->
+  <item name="btnHelp"><![CDATA[ Hilfe]]></item>
+  <item name="btnDownload"><![CDATA[ nachladen
+
+
+]]></item>
+  <item name="btnPrint"><![CDATA[drucken]]></item>
+  <item name="btnOk"><![CDATA[ OK]]></item>
+  <item name="btnCancel"><![CDATA[ Abbrechen]]></item>
+  <item name="btnClose"><![CDATA[ Schließen]]></item>
+  <item name="btnAddBookmark"><![CDATA[ Hinzufügen neuer]]></item>
+  <item name="btnDeleteAllBookmark"><![CDATA[ Löschen Sie alle]]></item>
+  <item name="btnAddNewNotes"><![CDATA[ Hinzufügen neuer Notizen]]></item>
+  <item name="btnDeleteAllNotes"><![CDATA[ Alle Notizen löschen]]></item>
+  <item name="btnEmailSend"><![CDATA[ Senden]]></item>
+  <item name="btnUse"><![CDATA[ Verwendung]]></item>
+  <item name="btnTranslate"><![CDATA[ Übersetzen]]></item>
+  <!--Search Panel -->
+  <item name="noresultfound"><![CDATA[ Kein Ergebnis gefunden!]]></item> 
+  
+  <!--IHDP Mode-->
+  <item name="featurenotenabled"><![CDATA[ Diese funktion nicht im Desktop-Modus aktiviert]]></item> 
+   
+  <item name="dlgLoginTitle"><![CDATA[ Login]]></item>
+  <item name="dlgLoginPassword"><![CDATA[ Password]]></item>
+  <item name="dlgLoginFailed"><![CDATA[ Login Failed !]]></item>
+  <item name="dlgLoginLoginButton"><![CDATA[ Login]]></item> 
+  <item name="dlgLoginSecurityInfoText"><![CDATA[ This page is secured. Login to view this page.]]></item>
+    
+  <item name="dlgSecurityPromptText"><![CDATA[ This book is secured and following pages are unsecured.]]></item>
+  <item name="ttMusicButtonText"><![CDATA[ Mute/Unmute]]></item>
+</locale>
+</GetLanguageResult>

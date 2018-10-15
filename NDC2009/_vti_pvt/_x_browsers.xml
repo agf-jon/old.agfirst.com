@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usagedata>
+<month val="jul 2010" total="7">
+<item str="Yahoo! Slurp 3.0" cnt="3" />
+<item str="Googlebot 2.1" cnt="2" />
+<item str="Microsoft Internet Explorer 8.0" cnt="2" />
+</month>
+<month val="oct 2010" total="1">
+<item str="Yahoo! Slurp 3.0" cnt="1" />
+</month>
+<month val="dec 2010" total="2">
+<item str="msnbot 2.0" cnt="1" />
+<item str="Yahoo! Slurp" cnt="1" />
+</month>
+<month val="jan 2011" total="1">
+<item str="bingbot 2.0" cnt="1" />
+</month>
+<month val="feb 2011" total="1">
+<item str="Yahoo! Slurp" cnt="1" />
+</month>
+<month val="mar 2011" total="3">
+<item str="msnbot 2.0" cnt="1" />
+<item str="bingbot 2.0" cnt="1" />
+<item str="Yahoo! Slurp" cnt="1" />
+</month>
+<month val="apr 2011" total="3">
+<item str="Yahoo! Slurp" cnt="2" />
+<item str="Microsoft Internet Explorer 6.0" cnt="1" />
+</month>
+<month val="may 2011" total="1">
+<item str="Yahoo! Slurp" cnt="1" />
+</month>
+</usagedata>

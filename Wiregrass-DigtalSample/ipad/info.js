@@ -1,0 +1,2 @@
+var total=15;
+var mainpath="../56AABBD18FE9FAC24EBE4301A92DC05E/";

@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>AccountAccess TLS Instructions</title>
+
+    <style>
+        <!--
+        /* Font Definitions */
+        @font-face {
+            font-family: "Cambria Math";
+            panose-1: 2 4 5 3 5 4 6 3 2 4;
+            mso-font-charset: 1;
+            mso-generic-font-family: roman;
+            mso-font-format: other;
+            mso-font-pitch: variable;
+            mso-font-signature: 0 0 0 0 0 0;
+        }
+
+        @font-face {
+            font-family: Calibri;
+            panose-1: 2 15 5 2 2 2 4 3 2 4;
+            mso-font-charset: 0;
+            mso-generic-font-family: swiss;
+            mso-font-pitch: variable;
+            mso-font-signature: -536870145 1073786111 1 0 415 0;
+        }
+
+        @font-face {
+            font-family: Tahoma;
+            panose-1: 2 11 6 4 3 5 4 4 2 4;
+            mso-font-charset: 0;
+            mso-generic-font-family: swiss;
+            mso-font-pitch: variable;
+            mso-font-signature: -520081665 -1073717157 41 0 66047 0;
+        }
+        /* Style Definitions */
+        p.MsoNormal, li.MsoNormal, div.MsoNormal {
+            mso-style-unhide: no;
+            mso-style-qformat: yes;
+            mso-style-parent: "";
+            margin-top: 0in;
+            margin-right: 0in;
+            margin-bottom: 10.0pt;
+            margin-left: 0in;
+            line-height: 115%;
+            mso-pagination: widow-orphan;
+            font-size: 11.0pt;
+            font-family: "Calibri",sans-serif;
+            mso-ascii-font-family: Calibri;
+            mso-ascii-theme-font: minor-latin;
+            mso-fareast-font-family: Calibri;
+            mso-fareast-theme-font: minor-latin;
+            mso-hansi-font-family: Calibri;
+            mso-hansi-theme-font: minor-latin;
+            mso-bidi-font-family: "Times New Roman";
+            mso-bidi-theme-font: minor-bidi;
+        }
+
+        a:link, span.MsoHyperlink {
+            mso-style-noshow: yes;
+            mso-style-priority: 99;
+            color: blue;
+            text-decoration: underline;
+            text-underline: single;
+        }
+
+        a:visited, span.MsoHyperlinkFollowed {
+            mso-style-noshow: yes;
+            mso-style-priority: 99;
+            color: purple;
+            mso-themecolor: followedhyperlink;
+            text-decoration: underline;
+            text-underline: single;
+        }
+
+        p.MsoAcetate, li.MsoAcetate, div.MsoAcetate {
+            mso-style-noshow: yes;
+            mso-style-priority: 99;
+            mso-style-link: "Balloon Text Char";
+            margin: 0in;
+            margin-bottom: .0001pt;
+            mso-pagination: widow-orphan;
+            font-size: 8.0pt;
+            font-family: "Tahoma",sans-serif;
+            mso-fareast-font-family: Calibri;
+            mso-fareast-theme-font: minor-latin;
+        }
+
+        p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph {
+            mso-style-priority: 34;
+            mso-style-unhide: no;
+            mso-style-qformat: yes;
+            margin-top: 0in;
+            margin-right: 0in;
+            margin-bottom: 10.0pt;
+            margin-left: .5in;
+            mso-add-space: auto;
+            line-height: 115%;
+            mso-pagination: widow-orphan;
+            font-size: 11.0pt;
+            font-family: "Calibri",sans-serif;
+            mso-ascii-font-family: Calibri;
+            mso-ascii-theme-font: minor-latin;
+            mso-fareast-font-family: Calibri;
+            mso-fareast-theme-font: minor-latin;
+            mso-hansi-font-family: Calibri;
+            mso-hansi-theme-font: minor-latin;
+            mso-bidi-font-family: "Times New Roman";
+            mso-bidi-theme-font: minor-bidi;
+        }
+
+        p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst {
+            mso-style-priority: 34;
+            mso-style-unhide: no;
+            mso-style-qformat: yes;
+            mso-style-type: export-only;
+            margin-top: 0in;
+            margin-right: 0in;
+            margin-bottom: 0in;
+            margin-left: .5in;
+            margin-bottom: .0001pt;
+            mso-add-space: auto;
+            line-height: 115%;
+            mso-pagination: widow-orphan;
+            font-size: 11.0pt;
+            font-family: "Calibri",sans-serif;
+            mso-ascii-font-family: Calibri;
+            mso-ascii-theme-font: minor-latin;
+            mso-fareast-font-family: Calibri;
+            mso-fareast-theme-font: minor-latin;
+            mso-hansi-font-family: Calibri;
+            mso-hansi-theme-font: minor-latin;
+            mso-bidi-font-family: "Times New Roman";
+            mso-bidi-theme-font: minor-bidi;
+        }
+
+        p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle {
+            mso-style-priority: 34;
+            mso-style-unhide: no;
+            mso-style-qformat: yes;
+            mso-style-type: export-only;
+            margin-top: 0in;
+            margin-right: 0in;
+            margin-bottom: 0in;
+            margin-left: .5in;
+            margin-bottom: .0001pt;
+            mso-add-space: auto;
+            line-height: 115%;
+            mso-pagination: widow-orphan;
+            font-size: 11.0pt;
+            font-family: "Calibri",sans-serif;
+            mso-ascii-font-family: Calibri;
+            mso-ascii-theme-font: minor-latin;
+            mso-fareast-font-family: Calibri;
+            mso-fareast-theme-font: minor-latin;
+            mso-hansi-font-family: Calibri;
+            mso-hansi-theme-font: minor-latin;
+            mso-bidi-font-family: "Times New Roman";
+            mso-bidi-theme-font: minor-bidi;
+        }
+
+        p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast {
+            mso-style-priority: 34;
+            mso-style-unhide: no;
+            mso-style-qformat: yes;
+            mso-style-type: export-only;
+            margin-top: 0in;
+            margin-right: 0in;
+            margin-bottom: 10.0pt;
+            margin-left: .5in;
+            mso-add-space: auto;
+            line-height: 115%;
+            mso-pagination: widow-orphan;
+            font-size: 11.0pt;
+            font-family: "Calibri",sans-serif;
+            mso-ascii-font-family: Calibri;
+            mso-ascii-theme-font: minor-latin;
+            mso-fareast-font-family: Calibri;
+            mso-fareast-theme-font: minor-latin;
+            mso-hansi-font-family: Calibri;
+            mso-hansi-theme-font: minor-latin;
+            mso-bidi-font-family: "Times New Roman";
+            mso-bidi-theme-font: minor-bidi;
+        }
+
+        span.BalloonTextChar {
+            mso-style-name: "Balloon Text Char";
+            mso-style-noshow: yes;
+            mso-style-priority: 99;
+            mso-style-unhide: no;
+            mso-style-locked: yes;
+            mso-style-link: "Balloon Text";
+            mso-ansi-font-size: 8.0pt;
+            mso-bidi-font-size: 8.0pt;
+            font-family: "Tahoma",sans-serif;
+            mso-ascii-font-family: Tahoma;
+            mso-hansi-font-family: Tahoma;
+            mso-bidi-font-family: Tahoma;
+        }
+
+        span.SpellE {
+            mso-style-name: "";
+            mso-spl-e: yes;
+        }
+
+        .MsoChpDefault {
+            mso-style-type: export-only;
+            mso-default-props: yes;
+            font-size: 10.0pt;
+            mso-ansi-font-size: 10.0pt;
+            mso-bidi-font-size: 10.0pt;
+            font-family: "Calibri",sans-serif;
+            mso-ascii-font-family: Calibri;
+            mso-ascii-theme-font: minor-latin;
+            mso-fareast-font-family: Calibri;
+            mso-fareast-theme-font: minor-latin;
+            mso-hansi-font-family: Calibri;
+            mso-hansi-theme-font: minor-latin;
+            mso-bidi-font-family: "Times New Roman";
+            mso-bidi-theme-font: minor-bidi;
+        }
+
+        @page WordSection1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in 1.0in 1.0in 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        div.WordSection1 {
+            page: WordSection1;
+        }
+        /* List Definitions */
+        @list l0 {
+            mso-list-id: 598753717;
+            mso-list-type: hybrid;
+            mso-list-template-ids: -1666779856 -726206004 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;
+        }
+
+        @list l0:level1 {
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+            mso-ansi-font-weight: normal;
+        }
+
+        @list l0:level2 {
+            mso-level-number-format: alpha-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l0:level3 {
+            mso-level-number-format: roman-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: right;
+            text-indent: -9.0pt;
+        }
+
+        @list l0:level4 {
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l0:level5 {
+            mso-level-number-format: alpha-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l0:level6 {
+            mso-level-number-format: roman-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: right;
+            text-indent: -9.0pt;
+        }
+
+        @list l0:level7 {
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l0:level8 {
+            mso-level-number-format: alpha-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l0:level9 {
+            mso-level-number-format: roman-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: right;
+            text-indent: -9.0pt;
+        }
+
+        @list l1 {
+            mso-list-id: 618220725;
+            mso-list-type: hybrid;
+            mso-list-template-ids: 658279792 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;
+        }
+
+        @list l1:level1 {
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l1:level2 {
+            mso-level-number-format: alpha-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l1:level3 {
+            mso-level-number-format: roman-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: right;
+            text-indent: -9.0pt;
+        }
+
+        @list l1:level4 {
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l1:level5 {
+            mso-level-number-format: alpha-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l1:level6 {
+            mso-level-number-format: roman-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: right;
+            text-indent: -9.0pt;
+        }
+
+        @list l1:level7 {
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l1:level8 {
+            mso-level-number-format: alpha-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l1:level9 {
+            mso-level-number-format: roman-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: right;
+            text-indent: -9.0pt;
+        }
+
+        @list l2 {
+            mso-list-id: 716587941;
+            mso-list-template-ids: -1866279720;
+        }
+
+        @list l3 {
+            mso-list-id: 917177924;
+            mso-list-template-ids: -96942014;
+        }
+
+        @list l4 {
+            mso-list-id: 1739590560;
+            mso-list-template-ids: -1157744510;
+        }
+
+        @list l4:level1 {
+            mso-level-tab-stop: .5in;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+            mso-ansi-font-weight: normal;
+        }
+
+        @list l5 {
+            mso-list-id: 1890610934;
+            mso-list-template-ids: 1024514634;
+        }
+
+        @list l6 {
+            mso-list-id: 2033873778;
+            mso-list-type: hybrid;
+            mso-list-template-ids: 658279792 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;
+        }
+
+        @list l6:level1 {
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l6:level2 {
+            mso-level-number-format: alpha-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l6:level3 {
+            mso-level-number-format: roman-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: right;
+            text-indent: -9.0pt;
+        }
+
+        @list l6:level4 {
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l6:level5 {
+            mso-level-number-format: alpha-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l6:level6 {
+            mso-level-number-format: roman-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: right;
+            text-indent: -9.0pt;
+        }
+
+        @list l6:level7 {
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l6:level8 {
+            mso-level-number-format: alpha-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: left;
+            text-indent: -.25in;
+        }
+
+        @list l6:level9 {
+            mso-level-number-format: roman-lower;
+            mso-level-tab-stop: none;
+            mso-level-number-position: right;
+            text-indent: -9.0pt;
+        }
+
+        ol {
+            margin-bottom: 0in;
+        }
+
+        ul {
+            margin-bottom: 0in;
+        }
+        -->
+    </style>
+
+</head>
+
+<body lang="EN-US" link="blue" vlink="purple" style='tab-interval: .5in'>
+
+    <div class="WordSection1">
+
+        <p class="MsoNormal">
+            <b style='mso-bidi-font-weight: normal'><span
+                style='font-size: 12.0pt; line-height: 115%; font-family: "Arial",sans-serif'>Oops!<o:p></o:p></span></b>
+        </p>
+
+        <p class="MsoNormal">
+            <o:p>&nbsp;</o:p>
+        </p>
+
+        <p class="MsoNormal">
+            <span style='font-family: "Arial",sans-serif'>It looks like
+your computer is using an operating system or browser that doesn’t provide a secure
+online banking experience for <span class="SpellE">AccountAccess</span>.<o:p></o:p></span>
+        </p>
+
+        <p class="MsoNormal">
+            <span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>
+                <o:p>&nbsp;</o:p>
+            </span>
+        </p>
+
+        <p class="MsoNormal">
+            <span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>
+                <o:p>&nbsp;</o:p>
+            </span>
+        </p>
+
+        <p class="MsoNormal">
+            <span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>To maintain the highest security standards and promote the
+safety of your data, we occasionally need to make security improvements that
+may impact older browsers and operating systems.<span
+    style='mso-spacerun: yes'>  </span>On&nbsp;December 1, 2015&nbsp;we&nbsp;will
+disable access to AccountAccess from browsers that do not support the latest
+communication protocols. This security vulnerability can allow intruders to
+hack their way into your customer information and other information as you use
+your computer to conduct business. Attacks you may have heard of that are the
+result of this vulnerability are Heartbleed and POODLE.
+                <o:p></o:p>
+            </span>
+        </p>
+
+        <p class="MsoNormal" style='margin-top: 12.0pt; line-height: 150%'>
+            <span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>The
+following Operating Systems and browsers support the latest encryption
+protocols, and are the only Operating Systems and browsers that will be able to
+access AccountAccess after December 1, 2015:<o:p></o:p></span>
+        </p>
+
+        <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="36%"
+            style='width: 36.8%; border-collapse: collapse; border: none; mso-border-alt: solid #EEEEEE .75pt; mso-yfti-tbllook: 1184; mso-padding-alt: 0in 5.4pt 0in 5.4pt'>
+            <tr style='mso-yfti-irow: 0; mso-yfti-firstrow: yes; page-break-inside: avoid; height: 22.2pt'>
+                <td width="100%" style='width: 100.0%; background: #D5D5D5; padding: .1in 7.05pt .1in 7.05pt; height: 22.2pt'>
+                    <p class="MsoNormal" align="center" style='margin-bottom: 11.25pt; text-align: center; line-height: 20.4pt'>
+                        <b><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Compatible Operating Systems /
+  Browser Versions<o:p></o:p></span></b>
+                    </p>
+                </td>
+            </tr>
+            <tr style='mso-yfti-irow: 1; page-break-inside: avoid'>
+                <td width="100%" style='width: 100.0%; border: inset 1.0pt; border-top: none; mso-border-top-alt: solid #EEEEEE .75pt; mso-border-alt: inset windowtext .75pt; mso-border-top-alt: solid #EEEEEE .75pt; padding: .1in 7.05pt .1in 7.05pt'>
+                    <p class="MsoNormal" style='margin-bottom: 11.25pt; line-height: 20.4pt'>
+                        <span
+                            style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>All
+  Windows O/S using Chrome version 40 or newer<o:p></o:p></span>
+                    </p>
+                </td>
+            </tr>
+            <tr style='mso-yfti-irow: 2; page-break-inside: avoid'>
+                <td width="100%" style='width: 100.0%; border: inset 1.0pt; border-top: none; mso-border-top-alt: solid #EEEEEE .75pt; mso-border-alt: inset windowtext .75pt; mso-border-top-alt: solid #EEEEEE .75pt; padding: .1in 7.05pt .1in 7.05pt'>
+                    <p class="MsoNormal" style='margin-bottom: 11.25pt; line-height: 20.4pt'>
+                        <span
+                            style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>All
+  Windows O/S using Firefox version 33 or newer<o:p></o:p></span>
+                    </p>
+                </td>
+            </tr>
+            <tr style='mso-yfti-irow: 3; page-break-inside: avoid'>
+                <td width="100%" style='width: 100.0%; border: inset 1.0pt; border-top: none; mso-border-top-alt: solid #EEEEEE .75pt; mso-border-alt: inset windowtext .75pt; mso-border-top-alt: solid #EEEEEE .75pt; padding: .1in 7.05pt .1in 7.05pt'>
+                    <p class="MsoNormal" style='margin-bottom: 11.25pt; line-height: 20.4pt'>
+                        <span
+                            style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Windows
+  7 &amp; 8 using Internet Explorer version 8 or newer<o:p></o:p></span>
+                    </p>
+                </td>
+            </tr>
+            <tr style='mso-yfti-irow: 4; page-break-inside: avoid'>
+                <td width="100%" style='width: 100.0%; border: inset 1.0pt; border-top: none; mso-border-top-alt: solid #EEEEEE .75pt; mso-border-alt: inset windowtext .75pt; mso-border-top-alt: solid #EEEEEE .75pt; padding: .1in 7.05pt .1in 7.05pt'>
+                    <p class="MsoNormal" style='margin-bottom: 11.25pt; line-height: 20.4pt'>
+                        <span
+                            style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Windows
+  Vista using Chrome or Firefox as a browser (see versions above)<o:p></o:p></span>
+                    </p>
+                </td>
+            </tr>
+            <tr style='mso-yfti-irow: 5; mso-yfti-lastrow: yes; page-break-inside: avoid'>
+                <td width="100%" style='width: 100.0%; border: inset 1.0pt; border-top: none; mso-border-top-alt: solid #EEEEEE .75pt; mso-border-alt: inset windowtext .75pt; mso-border-top-alt: solid #EEEEEE .75pt; padding: .1in 7.05pt .1in 7.05pt'>
+                    <p class="MsoNormal" style='margin-bottom: 11.25pt; line-height: 20.4pt'>
+                        <span
+                            style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>All
+  Mac O/S using Safari 7 or newer<o:p></o:p></span>
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <p class="MsoNormal">
+            <b style='mso-bidi-font-weight: normal'><span
+                style='font-size: 12.0pt; line-height: 115%'>
+                <o:p>&nbsp;</o:p>
+            </span></b>
+        </p>
+
+        <p class="MsoNormal">
+            <b style='mso-bidi-font-weight: normal'><span
+                style='font-size: 14.0pt; line-height: 115%; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>What Do You Need to Do?<o:p></o:p></span></b>
+        </p>
+
+        <p class="MsoNormal">
+            <b style='mso-bidi-font-weight: normal'><span
+                style='font-size: 12.0pt; line-height: 115%; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Step 1: Check to Make Sure You Have
+a Compatible Browser<o:p></o:p></span></b>
+        </p>
+
+        <p class="MsoNormal" style='tab-stops: 863.25pt'>
+            <span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>How do you know which browser
+version you are using?<span style='mso-spacerun: yes'>  </span>Find your browser
+in the list of browsers below and follow the step-by-step instructions for
+determining which version you are using.<a name="1"></a><span style='mso-tab-count: 1'>                                                                                                                                                                        </span>
+                <o:p></o:p>
+            </span>
+        </p>
+
+        <p class="MsoNormal" style='margin-bottom: 11.25pt; line-height: 20.4pt'>
+            <b><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Internet
+Explorer:<o:p></o:p></span></b>
+        </p>
+
+        <p class="MsoListParagraphCxSpFirst" style='margin-bottom: 0in; margin-bottom: .0001pt; mso-add-space: auto; text-indent: -.25in; line-height: 20.4pt; mso-list: l0 level1 lfo1'>
+            <![if !supportLists]><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: Arial; mso-bidi-font-weight: bold'><span style='mso-list: Ignore'>1.<span style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+                </span></span></span><![endif]><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-bidi-font-weight: bold'>Open
+Internet Explorer.<o:p></o:p></span>
+        </p>
+
+        <p class="MsoListParagraphCxSpLast" style='margin-bottom: 0in; margin-bottom: .0001pt; mso-add-space: auto; text-indent: -.25in; line-height: normal; mso-list: l0 level1 lfo1'>
+            <![if !supportLists]><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: Arial'><span
+                    style='mso-list: Ignore'>2.<span style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+                    </span></span></span><![endif]><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Click Help and select “About
+Internet Explorer.”<o:p></o:p></span>
+        </p>
+
+        <p class="MsoNormal" style='margin-bottom: 0in; margin-bottom: .0001pt; text-indent: .5in; line-height: normal'>
+            <b style='mso-bidi-font-weight: normal'><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Tip:</span></b><span
+                    style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>
+If you don't see the File, Edit, View menu, press the </span><b style='mso-bidi-font-weight: normal'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; color: windowtext; text-decoration: none; text-underline: none'>Alt</span></b><span
+    style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; color: windowtext; text-decoration: none; text-underline: none'> key</span></a><span
+        style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>
+to make the menu visible.<b><o:p></o:p></b></span>
+        </p>
+
+        <p class="MsoListParagraph" style='margin-bottom: 0in; margin-bottom: .0001pt; mso-add-space: auto; text-indent: -.25in; line-height: normal; mso-list: l0 level1 lfo1'>
+            <![if !supportLists]><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: Arial; mso-bidi-font-weight: bold'><span style='mso-list: Ignore'>3.<span style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+                </span></span></span><![endif]><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>The Internet Explorer About page
+opens, where you can view the Version number, as shown below. If you are using
+Internet Explorer version 8 or newer, your browser is compatible with TLS 1.1
+and TLS 1.2. If you are using an older version of Internet Explorer you will
+need to download a newer version to your computer.<b><o:p></o:p></b></span>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.2pt'>
+            <span style='font-family: "Arial",sans-serif; mso-no-proof: yes'>
+                <!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Picture_x0020_2" o:spid="_x0000_i1031" type="#_x0000_t75"
+ style='width:150pt;height:126pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Images/image001.png" o:title=""/>
+</v:shape><![endif]-->
+                <![if !vml]><img border="0" width="200" height="168"
+                    src="Images/image002.png" v:shapes="Picture_x0020_2"><![endif]></span><span
+                        lang="EN" style='font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN'><o:p></o:p></span>
+        </p>
+
+        <p class="MsoNormal" style='margin-top: 12.0pt; margin-right: 0in; margin-bottom: 0in; margin-left: 0in; margin-bottom: .0001pt; line-height: normal'>
+            <a name="2"></a><b><span
+                style='font-size: 10.5pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>
+                <o:p>&nbsp;</o:p>
+            </span></b>
+        </p>
+
+        <p class="MsoNormal" style='margin-top: 12.0pt; margin-right: 0in; margin-bottom: 0in; margin-left: 0in; margin-bottom: .0001pt; line-height: normal'>
+            <b><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Firefox:<o:p></o:p></span></b>
+        </p>
+
+        <p class="MsoNormal" style='margin-bottom: 0in; margin-bottom: .0001pt; line-height: normal'>
+            <b><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>
+                <o:p>&nbsp;</o:p>
+            </span></b>
+        </p>
+
+        <p class="MsoListParagraphCxSpFirst" style='margin-bottom: 0in; margin-bottom: .0001pt; mso-add-space: auto; text-indent: -.25in; line-height: normal; mso-list: l6 level1 lfo2'>
+            <![if !supportLists]><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: Arial'><span
+                    style='mso-list: Ignore'>1.<span style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+                    </span></span></span><![endif]><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Open Firefox.<o:p></o:p></span>
+        </p>
+
+        <p class="MsoListParagraphCxSpLast" style='margin-bottom: 0in; margin-bottom: .0001pt; mso-add-space: auto; text-indent: -.25in; line-height: normal; mso-list: l6 level1 lfo2'>
+            <![if !supportLists]><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: Arial'><span
+                    style='mso-list: Ignore'>2.<span style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+                    </span></span></span><![endif]><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Click <b style='mso-bidi-font-weight: normal'>Help</b> and select <b style='mso-bidi-font-weight: normal'>About
+Firefox</b>.<o:p></o:p></span>
+        </p>
+
+        <p class="MsoNormal" style='margin-bottom: 0in; margin-bottom: .0001pt; text-align: justify; text-indent: .5in; line-height: normal'>
+            <b style='mso-bidi-font-weight: normal'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Tip:</span></b><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'> If you don't see the File, Edit,
+View menu, press the </span><b style='mso-bidi-font-weight: normal'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; color: windowtext; text-decoration: none; text-underline: none'>Alt
+</span></b><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; color: windowtext; text-decoration: none; text-underline: none'>key</span></a><span
+    style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>
+to make the menu visible.<o:p></o:p></span>
+        </p>
+
+        <p class="MsoListParagraph" style='margin-bottom: 0in; margin-bottom: .0001pt; mso-add-space: auto; text-indent: -.25in; line-height: normal; mso-list: l6 level1 lfo2'>
+            <![if !supportLists]><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: Arial'><span
+                    style='mso-list: Ignore'>3.<span style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+                    </span></span></span><![endif]><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>The Mozilla Firefox About page
+opens, where you can view the Version number, as shown below. Firefox will even
+let you know if your version is up to date. If you are using Firefox versions
+33 or newer, your browser is compatible with TLS 1.1 and TLS 1.2. If you are
+using an older version of Firefox you will need to download a newer version to
+your computer.<o:p></o:p></span>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.2pt'>
+            <span style='font-family: "Arial",sans-serif; mso-no-proof: yes'>
+                <!--[if gte vml 1]><v:shape id="Picture_x0020_3" o:spid="_x0000_i1030"
+ type="#_x0000_t75" style='width:279.75pt;height:108.75pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Images/image003.png" o:title=""/>
+</v:shape><![endif]-->
+                <![if !vml]><img border="0" width="373" height="145"
+                    src="Images/image004.png" v:shapes="Picture_x0020_3"><![endif]></span><span
+                        lang="EN" style='font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN'><o:p></o:p></span>
+        </p>
+
+        <p class="MsoNormal" style='margin-bottom: 11.25pt; line-height: 20.4pt'>
+            <a name="3"></a><b><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Google
+Chrome:<o:p></o:p></span></b>
+        </p>
+
+        <p class="MsoListParagraphCxSpFirst" style='margin-bottom: 0in; margin-bottom: .0001pt; mso-add-space: auto; text-indent: -.25in; line-height: normal; mso-list: l1 level1 lfo3'>
+            <![if !supportLists]><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: Arial'><span
+                    style='mso-list: Ignore'>1.<span style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+                    </span></span></span><![endif]><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Open Chrome.<o:p></o:p></span>
+        </p>
+
+        <p class="MsoListParagraphCxSpMiddle" style='margin-bottom: 0in; margin-bottom: .0001pt; mso-add-space: auto; text-indent: -.25in; line-height: normal; mso-list: l1 level1 lfo3'>
+            <![if !supportLists]><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: Arial'><span
+                    style='mso-list: Ignore'>2.<span style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+                    </span></span></span><![endif]><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Click the Wrench or Menu icon or
+near the top right corner of the Chrome window (just below the X button that
+closes the window) and select <b style='mso-bidi-font-weight: normal'>About
+Google Chrome</b>.<o:p></o:p></span>
+        </p>
+
+        <p class="MsoListParagraphCxSpMiddle" style='margin-bottom: 0in; margin-bottom: .0001pt; mso-add-space: auto; text-indent: -.25in; line-height: normal; mso-list: l1 level1 lfo3'>
+            <![if !supportLists]><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: Arial'><span
+                    style='mso-list: Ignore'>3.<span style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+                    </span></span></span><![endif]><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>The Google Chrome About page opens,
+where you can view the Version number. Google Chrome will even let you know if
+your version is up to date. If you are using Chrome versions 40 or newer, your
+browser is compatible with TLS 1.1 and TLS 1.2. If you are using an older
+version of Chrome you will need to download a newer version to your computer.<o:p></o:p></span>
+        </p>
+
+        <p class="MsoListParagraphCxSpLast" style='margin-bottom: 0in; margin-bottom: .0001pt; mso-add-space: auto; line-height: normal'>
+            <span style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>
+                <o:p>&nbsp;</o:p>
+            </span>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.2pt'>
+            <span style='font-family: "Arial",sans-serif; mso-no-proof: yes'>
+                <!--[if gte vml 1]><v:shape id="Picture_x0020_4" o:spid="_x0000_i1029"
+ type="#_x0000_t75" style='width:255.75pt;height:171pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Images/image005.png" o:title=""/>
+</v:shape><![endif]-->
+                <![if !vml]><img border="0" width="341" height="228"
+                    src="Images/image006.png" v:shapes="Picture_x0020_4"><![endif]></span><span
+                        lang="EN" style='font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN'><o:p></o:p></span>
+        </p>
+
+        <p class="MsoNormal" style='margin-bottom: 11.25pt; line-height: 20.4pt'>
+            <b><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Safari:<o:p></o:p></span></b>
+        </p>
+
+        <ol start="1" type="1">
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: normal; mso-list: l3 level1 lfo4; tab-stops: list .5in'><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Open
+     Safari.<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: normal; mso-list: l3 level1 lfo4; tab-stops: list .5in'><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Click
+     on Safari in your browser menu, located at the top of your screen, and
+     select About Safari.<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: normal; mso-list: l3 level1 lfo4; tab-stops: list .5in'><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>A
+     dialog box will now appear containing the browser's version number. The
+     first number, located outside of the parenthesis, is the actual version of
+     Safari. If you are using Safari 7 or newer, your browser is compatible
+     with TLS 1.1 and TLS 1.2. If you are using an older version of Safari you
+     will need to download a newer version to your computer.<o:p></o:p></span></li>
+        </ol>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-left: .5in; line-height: normal'>
+            <span style='font-family: "Arial",sans-serif; mso-no-proof: yes'>
+                <!--[if gte vml 1]><v:shape id="Picture_x0020_5" o:spid="_x0000_i1028"
+ type="#_x0000_t75" style='width:168.75pt;height:123pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Images/image007.png" o:title=""/>
+</v:shape><![endif]-->
+                <![if !vml]><img border="0" width="225" height="164"
+                    src="Images/image008.png" v:shapes="Picture_x0020_5"><![endif]></span><span
+                        style='font-family: "Arial",sans-serif'><o:p></o:p></span>
+        </p>
+
+        <p class="MsoNormal">
+            <span style='font-family: "Arial",sans-serif'>
+                <o:p>&nbsp;</o:p>
+            </span>
+        </p>
+
+        <p class="MsoNormal">
+            <b style='mso-bidi-font-weight: normal'><span
+                style='font-size: 12.0pt; line-height: 115%; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>What happens if you do not have a
+compatible browser?</span></b><span style='font-size: 10.0pt; line-height: 115%; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'> </span><span
+    style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>After
+December 1, 2015 you will not be able to access <span class="SpellE">AccountAccess</span>
+    if you do not have a compatible browser. Please download one of the compatible
+browsers listed above by visiting one of the following websites:<o:p></o:p></span>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; text-indent: .5in; line-height: 20.4pt; background: white'>
+            <b><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Internet
+Explorer:<span style='mso-spacerun: yes'>  </span></span></b><a
+    href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"><span
+        style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-bidi-font-weight: bold'>http://windows.microsoft.com/en-us/internet-explorer/download-ie</span></a><b><span
+            style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'><o:p></o:p></span></b>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; text-indent: .5in; line-height: 20.4pt; background: white'>
+            <b><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Google
+Chrome:<span style='mso-spacerun: yes'>  </span></span></b><a
+    href="https://www.google.com/chrome/browser/"><span lang="EN" style='font-family: "Arial",sans-serif; mso-ansi-language: EN'>https://www.google.com/<span
+        style='mso-bidi-font-weight: bold'>chrome</span>/browser/</span></a><cite><span
+            lang="EN" style='font-family: "Calibri",sans-serif; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: "Times New Roman"; mso-bidi-theme-font: minor-bidi; color: #222222; mso-ansi-language: EN'><o:p></o:p></span></cite>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; text-indent: .5in; line-height: 20.4pt; background: white'>
+            <b><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Firefox:
+            </span></b><a href="https://www.mozilla.org/en-US/firefox/new/"><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-bidi-font-weight: bold'>https://www.mozilla.org/en-US/firefox/new/</span></a><b><span
+                    style='mso-fareast-font-family: "Times New Roman"'><o:p></o:p></span></b>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; text-indent: .5in; line-height: 20.4pt; background: white'>
+            <b><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Safari:<span
+                    style='mso-spacerun: yes'>  </span></span></b><a
+                        href="https://support.apple.com/en-us/HT204416"><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-bidi-font-weight: bold'>https://support.apple.com/en-us/HT204416</span></a><b><span
+                            style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'><o:p></o:p></span></b>
+        </p>
+
+        <p class="MsoNormal">
+            <b style='mso-bidi-font-weight: normal'><span
+                style='font-size: 12.0pt; line-height: 115%; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>
+                <o:p>&nbsp;</o:p>
+            </span></b>
+        </p>
+
+        <p class="MsoNormal">
+            <b style='mso-bidi-font-weight: normal'><span
+                style='font-size: 12.0pt; line-height: 115%; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Step 2: Make Sure Your Browser Has
+TLS 1.1 and TLS 1.2 Enabled<o:p></o:p></span></b>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 20.4pt; background: white'>
+            <span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>In order to maintain access to
+AccountAccess, you need to ensure that your browser has TLS 1.1 and TLS 1.2
+enabled.<span style='mso-spacerun: yes'>  </span>How do you do this? Find your
+browser in the list of browsers below and follow the step-by-step instructions:<o:p></o:p></span>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 20.4pt; background: white'>
+            <b><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Internet Explorer:</span></b><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'><o:p></o:p></span>
+        </p>
+
+        <ol start="1" type="1">
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l2 level1 lfo5; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Open Internet Explorer<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l2 level1 lfo5; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Click Alt T and select “<b style='mso-bidi-font-weight: normal'>Internet Options</b>.”<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l2 level1 lfo5; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Select the “<b style='mso-bidi-font-weight: normal'>Advanced</b>”
+     tab.<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l2 level1 lfo5; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Scroll down to the “<b style='mso-bidi-font-weight: normal'>Security</b>” section.<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l2 level1 lfo5; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Locate and check “<b style='mso-bidi-font-weight: normal'>Use
+     TLS 1.1 and TLS 1.2</b>.”<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l2 level1 lfo5; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Then, press the “<b style='mso-bidi-font-weight: normal'>OK</b>”
+     button.<o:p></o:p></span></li>
+        </ol>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 20.4pt; background: white'>
+            <span style='font-family: "Arial",sans-serif; mso-no-proof: yes'>
+                <!--[if gte vml 1]><v:shape id="Picture_x0020_17" o:spid="_x0000_i1027"
+ type="#_x0000_t75" style='width:275.25pt;height:230.25pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Images/image009.png" o:title=""/>
+</v:shape><![endif]-->
+                <![if !vml]><img border="0" width="367" height="307"
+                    src="Images/image010.png" v:shapes="Picture_x0020_17"><![endif]></span><b><span
+                        style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'><o:p></o:p></span></b>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 20.4pt; background: white'>
+            <b><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Google Chrome:</span></b><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'><o:p></o:p></span>
+        </p>
+
+        <ol start="1" type="1">
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l5 level1 lfo6; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Open Google Chrome<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l5 level1 lfo6; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Click Alt F and select “<b style='mso-bidi-font-weight: normal'>Settings</b>.”<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l5 level1 lfo6; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Scroll down and select “<b style='mso-bidi-font-weight: normal'>Show advanced settings</b>…”<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l5 level1 lfo6; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Scroll down to the Network section and click on “<b
+                style='mso-bidi-font-weight: normal'>Change proxy settings</b>…”<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l5 level1 lfo6; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Select the “<b style='mso-bidi-font-weight: normal'>Advanced</b>”
+     tab.<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l5 level1 lfo6; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Scroll down to the “<b style='mso-bidi-font-weight: normal'>Security</b>” section.<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l5 level1 lfo6; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Locate and check “<b style='mso-bidi-font-weight: normal'>Use
+     TLS 1.1 and TLS 1.2</b>.”<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l5 level1 lfo6; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Then, press the “<b style='mso-bidi-font-weight: normal'>OK</b>”
+     button.<o:p></o:p></span></li>
+        </ol>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 20.4pt; background: white'>
+            <span style='font-family: "Arial",sans-serif; mso-no-proof: yes'>
+                <!--[if gte vml 1]><v:shape id="Picture_x0020_18" o:spid="_x0000_i1026"
+ type="#_x0000_t75" style='width:234.75pt;height:217.5pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Images/image011.png" o:title=""/>
+</v:shape><![endif]-->
+                <![if !vml]><img border="0" width="313" height="290"
+                    src="Images/image012.png" v:shapes="Picture_x0020_18"><![endif]></span><b><span
+                        style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'><o:p></o:p></span></b>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 20.4pt; background: white'>
+            <b><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Firefox:</span></b><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'><o:p></o:p></span>
+        </p>
+
+        <ol start="1" type="1">
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l4 level1 lfo7; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Open Firefox<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l4 level1 lfo7; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Type in “<span class="SpellE"><b style='mso-bidi-font-weight: normal'>about:config</b></span>” in the URL bar and press Enter<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l4 level1 lfo7; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Scroll down to “<span class="SpellE"><b style='mso-bidi-font-weight: normal'>security.tls.version.max</b></span>” and press Enter<o:p></o:p></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l4 level1 lfo7; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Set the value to <b style='mso-bidi-font-weight: normal'>3<o:p></o:p></b></span></li>
+            <li class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; mso-list: l4 level1 lfo7; tab-stops: list .5in; background: white'><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Then, press the “<b style='mso-bidi-font-weight: normal'>OK</b>”
+     button.<o:p></o:p></span></li>
+        </ol>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 20.4pt; background: white'>
+            <span style='font-family: "Arial",sans-serif; mso-no-proof: yes'>
+                <!--[if gte vml 1]><v:shape id="Picture_x0020_20" o:spid="_x0000_i1025"
+ type="#_x0000_t75" style='width:404.25pt;height:156.75pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Images/image013.png" o:title=""/>
+</v:shape><![endif]-->
+                <![if !vml]><img border="0" width="539" height="209"
+                    src="Images/image014.png" v:shapes="Picture_x0020_20"><![endif]></span><b><span
+                        style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'><o:p></o:p></span></b>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 20.4pt; background: white'>
+            <b><span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Safari:</span></b><span
+                style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'><o:p></o:p></span>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 19.5pt; background: white'>
+            <span style='font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>There are no options for enabling
+SSL protocols. If you are using Safari version 7 or greater, TLS 1.1 &amp; 1.2
+are automatically enabled.</span><span style='font-family: "Arial",sans-serif'><o:p></o:p></span>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 20.4pt; background: white'>
+            <b style='mso-bidi-font-weight: normal'><span
+                style='font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>Thank you for being a Farm Credit customer.<span
+                    style='mso-spacerun: yes'>  </span>We apologize for this inconvenience; however
+the security of your account information is of utmost importance to us. If you
+encounter any issues with this process, please contact the Customer Support
+Center toll-free at 1-844-275-9534 or by email at AASupport@farmcredit.net.<o:p></o:p></span></b>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 20.4pt; background: white'>
+            <span style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>
+                <o:p>&nbsp;</o:p>
+            </span>
+        </p>
+
+        <p class="MsoNormal" style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; line-height: 20.4pt; background: white'>
+            <span style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>
+                <o:p>&nbsp;</o:p>
+            </span>
+        </p>
+
+    </div>
+
+</body>
+
+</html>

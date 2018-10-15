@@ -1,0 +1,177 @@
+<HTML><HEAD>
+<TITLE>Choose a County in Louisiana.</TITLE>
+
+<SCRIPT LANGUAGE="JAVASCRIPT">
+/* This code is Copyright (c) 1996 Nick Heinle and Athenia Associates, 
+           * all rights reserved. In order to receive the right to license this 
+           * code for use on your site the original code must be copied from the
+           * Web site webreference.com/javascript/. License is granted to user to 
+           * reuse this code on their own Web site if and only if this entire copyright
+           * notice is included. Code written by Nick Heinle of webreference.com.
+           */
+
+          function MakeArray()
+                  {
+                  this.length = MakeArray.arguments.length
+                  for (var i = 0; i < this.length; i++)
+                  this[i+1] = MakeArray.arguments[i]
+                  }
+
+          var siteopt = new MakeArray("Select A County",
+                                      "Acadia",
+                                      "Allen",
+                                      "Ascension",
+                                      "Assumption",
+                                      "Avoyelles",
+                                      "Beauregard",
+                                      "Calcasieu",
+                                      "Caldwell",
+                                      "Cameron",
+                                      "Catahoula",
+                                      "Concordia",
+                                      "East Baton Rouge",
+                                      "East Carroll",
+                                      "East Feliciana",
+                                      "Evangeline",
+                                      "Franklin",
+                                      "Grant",
+                                      "Iberia",
+                                      "Iberville",
+                                      "Jefferson",
+                                      "Jefferson Davis",
+                                      "Lafayette",
+                                      "Lafourche",
+                                      "La Salle",
+                                      "Livingston",
+                                      "Madison",
+                                      "Morehouse",
+                                      "Natchitoches",
+                                      "Orleans",
+                                      "Ouachita",
+                                      "Plaquemines",
+                                      "Pointe Coupee",
+                                      "Rapides",
+                                      "Richland",
+                                      "Sabine",
+                                      "St. Bernard",
+                                      "St. Charles",
+                                      "St. Helena",
+                                      "St. James",
+                                      "St. John the Baptist",
+                                      "St. Landry",
+                                      "St. Martin",
+                                      "St. Mary",
+                                      "St. Tammany",
+                                      "Tangipahoa",
+                                      "Tensas",
+                                      "Terrebonne",
+                                      "Vermilion",
+                                      "Vernon",
+                                      "Washington",
+                                      "West Baton Rouge",
+                                      "West Carroll",
+                                      "West Feliciana",
+                                      "Winn");
+
+          var url = new MakeArray("",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM",
+                                      "092L.HTM");
+
+          function jumpPage(form)
+          {
+                  i = form.SelectMenu.selectedIndex;
+                  if (i == 0) return;
+                  window.location.href = url[i+1];
+          }
+</SCRIPT>
+
+</Head>
+<BODY BGCOLOR="WHITE">
+<IMG SRC="FIND.GIF" width="342" height="39"><BR>
+<FONT SIZE=3 FACE="Verdana,Helvetica,Arial" COLOR="BLACK"><B>Louisiana</B><P>Select a county using the pull-down menu below.<BR><BR><font size=1>
+<SCRIPT LANGUAGE="JAVASCRIPT">
+              document.writeln('<FORM><SELECT NAME="SelectMenu" onChange="jumpPage(this.form)">');
+              tot = siteopt.length;
+                  for (var i = 1; i <= tot; i++)
+                  document.write("<OPTION>" +siteopt[i]);
+              document.writeln('</SELECT>');
+              if (navigator.userAgent.indexOf("Mozilla/2") != -1)
+              document.writeln('<INPUT TYPE = BUTTON VALUE = "Jump!">');
+              document.writeln('</FORM>');
+</SCRIPT>
+<P>
+
+
+
+<!-- Google Analytics Tracking Code -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34898365-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- End Google Analytics Tracking Code -->
+
+</body>
+</html>
